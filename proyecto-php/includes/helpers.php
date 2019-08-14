@@ -11,25 +11,30 @@ function mostrarError($errores, $campo) {
 
 function borrarErrores() {
 
-    //$borrado = false;
+    $borrado = false;
 
     if (isset($_SESSION["errores"])) {
         $_SESSION["errores"] = null;
-        unset($_SESSION["errores"]);
+        $borrado = TRUE;
+    }
+    
+     if (isset($_SESSION["errores_entrada"])) {
+        $_SESSION["errores_entrada"] = null;
+        $borrado = TRUE;
     }
 
     if (isset($_SESSION["completado"])) {
         $_SESSION["completado"] = NULL;
-        unset($_SESSION["completado"]);
+        $borrado = TRUE;
     }
 
-   // return $borrado;
+   return $borrado;
 }
 
 function conseguirCategorias($conexion){
     $sql = "SELECT * FROM categorias ORDER BY id ASC;";    
     $categorias = mysqli_query($conexion, $sql);
-    $result = array();
+    $resultado = array();
      
     if($categorias && mysqli_num_rows($categorias) >= 1){
         $resultado = $categorias;

@@ -7,7 +7,7 @@ $database = "blog_master";
 
 $db = mysqli_connect($host, $user, $password, $database);
 
-mysqli_query($db, "SET NAMES 'utf-8'");
+mysqli_query($db, "SET NAMES 'utf8'");
 
 
 //INICIAR SESION
