@@ -1,5 +1,6 @@
 <h1>Bienvenido a mi web con MVC</h1>
 <?php
+//comentario
 require_once 'controllers/UsuarioController.php';
 require_once 'controllers/NotaController.php';
 
